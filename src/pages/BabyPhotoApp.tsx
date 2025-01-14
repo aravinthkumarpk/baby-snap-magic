@@ -30,6 +30,8 @@ const BabyPhotoApp = () => {
   }, []);
 
   const handleSave = useCallback(() => {
+    if (!selectedPhoto) return;
+
     setCurrentView('processing');
     setProcessingProgress(0);
 
@@ -44,22 +46,22 @@ const BabyPhotoApp = () => {
       });
     }, 50);
 
+    // Store the current selectedPhoto value
+    const photoToSave = selectedPhoto;
+
     // Simulate completion after processing
     setTimeout(() => {
       clearInterval(progressInterval);
       setProcessingProgress(100);
 
-      if (selectedPhoto) {
-        const newPhoto: PhotoData = {
-          id: Date.now().toString(),
-          url: selectedPhoto,
-          timestamp: Date.now(),
-          processed: true
-        };
+      const newPhoto: PhotoData = {
+        id: Date.now().toString(),
+        url: photoToSave,
+        timestamp: Date.now(),
+        processed: true
+      };
 
-        setPhotos(prev => [newPhoto, ...prev]);
-      }
-
+      setPhotos(prev => [newPhoto, ...prev]);
       setCurrentView('gallery');
       setSelectedPhoto(null);
 

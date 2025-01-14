@@ -22,10 +22,7 @@ const PostCaptureView: React.FC<PostCaptureViewProps> = ({
       setIsLoading(true);
       setError(null);
 
-      if (!photoUrl.startsWith('data:image')) {
-        throw new Error('Invalid photo format');
-      }
-
+      // We no longer need to check if it's a data URL since we're getting the blob URL directly
       await new Promise(resolve => setTimeout(resolve, 500));
       onSave();
     } catch (err) {
