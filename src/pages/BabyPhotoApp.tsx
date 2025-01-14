@@ -37,6 +37,7 @@ const BabyPhotoApp = () => {
       clearInterval(interval);
       setProgress(100);
       setCurrentView('gallery');
+      setSelectedPhoto(null); // Reset selected photo when going to gallery
       toast({
         title: "Processing complete!",
         description: "Your AI-enhanced photos are ready to view.",
