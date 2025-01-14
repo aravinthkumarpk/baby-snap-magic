@@ -6,7 +6,7 @@ import PhotoViewer from '@/components/gallery/PhotoViewer';
 import { useToast } from '@/components/ui/use-toast';
 
 const BabyPhotoApp = () => {
-  const [currentView, setCurrentView] = useState<'camera' | 'preview' | 'gallery'>('camera');
+  const [currentView, setCurrentView] = useState<'camera' | 'preview' | 'gallery'>('gallery');
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
   const { toast } = useToast();
 
