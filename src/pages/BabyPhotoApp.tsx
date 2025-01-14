@@ -3,8 +3,8 @@ import CameraView from '@/components/camera/CameraView';
 import PostCaptureView from '@/components/camera/PostCaptureView';
 import ResultsGallery from '@/components/gallery/ResultsGallery';
 import PhotoViewer from '@/components/gallery/PhotoViewer';
+import ProcessingView from '@/components/processing/ProcessingView';
 import { useToast } from '@/components/ui/use-toast';
-import { Progress } from '@/components/ui/progress';
 
 const BabyPhotoApp = () => {
   const [currentView, setCurrentView] = useState<'camera' | 'preview' | 'gallery' | 'processing'>('gallery');
@@ -21,7 +21,6 @@ const BabyPhotoApp = () => {
     setCurrentView('processing');
     setProgress(0);
     
-    // Simulate AI processing with progress updates
     const interval = setInterval(() => {
       setProgress(prev => {
         if (prev >= 100) {
@@ -32,7 +31,6 @@ const BabyPhotoApp = () => {
       });
     }, 150);
 
-    // Switch to gallery after processing
     setTimeout(() => {
       clearInterval(interval);
       setProgress(100);
@@ -41,6 +39,7 @@ const BabyPhotoApp = () => {
       toast({
         title: "Processing complete!",
         description: "Your AI-enhanced photos are ready to view.",
+        duration: 2000, // Auto dismiss after 2 seconds
       });
     }, 3000);
   };
@@ -48,26 +47,6 @@ const BabyPhotoApp = () => {
   const handlePhotoClick = (photoUrl: string) => {
     setSelectedPhoto(photoUrl);
   };
-
-  const ProcessingView = () => (
-    <div className="h-full bg-black flex flex-col items-center justify-center px-8 text-white">
-      <div className="w-full max-w-sm space-y-8">
-        <div className="space-y-2 text-center">
-          <h2 className="text-2xl font-semibold">Enhancing your photo</h2>
-          <p className="text-gray-400">Our AI is creating magical variations of your precious moment</p>
-        </div>
-        
-        <Progress value={progress} className="h-2 w-full" />
-        
-        <div className="text-center text-sm text-gray-400">
-          {progress < 30 && "Analyzing photo..."}
-          {progress >= 30 && progress < 60 && "Applying AI enhancements..."}
-          {progress >= 60 && progress < 90 && "Creating variations..."}
-          {progress >= 90 && "Finalizing results..."}
-        </div>
-      </div>
-    </div>
-  );
 
   return (
     <div className="h-screen bg-black">
@@ -84,7 +63,7 @@ const BabyPhotoApp = () => {
       )}
       
       {currentView === 'processing' && (
-        <ProcessingView />
+        <ProcessingView progress={progress} />
       )}
       
       {currentView === 'gallery' && (
