@@ -14,7 +14,8 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<BabyPhotoApp />} />
+          <Route path="/" element={<BabyPhotoApp currentView = "camera"/>} />  
+
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
