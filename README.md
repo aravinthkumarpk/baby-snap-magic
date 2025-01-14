@@ -1,69 +1,84 @@
-# Welcome to your Lovable project
+# Baby Photo App
 
-## Project info
+## Overview
+The **Baby Photo App** is a delightful and user-friendly application designed to help users capture, enhance, and share precious moments of their baby’s life. The app offers seamless photo capturing, AI-powered photo enhancement, and a gallery to store and revisit these cherished memories. With intuitive UI components and robust functionality, this app ensures every user enjoys a hassle-free and heartwarming experience.
 
-**URL**: https://lovable.dev/projects/0f38e276-2e07-46c3-babf-eabd5f1ab874
+---
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+### Photo Capture
+- **Camera View**: Allows users to take photos effortlessly with an intuitive interface.
+- **Flash Toggle**: Simple controls for toggling flash on and off.
+- **Theme Selector**: Customize photos with themes like Dreamy, Vintage, Bright, and more.
 
-**Use Lovable**
+### Post-Capture Enhancements
+- **Preview and Save**: Review captured photos and save them to the gallery.
+- **Discard Option**: Remove photos if they don’t meet your expectations.
+- **Thematic Enhancements**: Apply AI-powered enhancements to create magical variations of your photos.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0f38e276-2e07-46c3-babf-eabd5f1ab874) and start prompting.
+### Gallery Management
+- **View Photos**: A well-organized gallery to store and browse all captured moments.
+- **Download & Share**: Save photos to your device or share them instantly with loved ones.
 
-Changes made via Lovable will be committed automatically to this repo.
+### AI-Powered Processing
+- **Photo Enhancements**: Apply smart algorithms to enhance image quality and add artistic effects.
+- **Progress Feedback**: Real-time updates during photo processing with descriptive progress messages.
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Tech Stack
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Frontend
+- **React**: Component-based UI for seamless interactivity and rendering.
+- **TypeScript**: Strongly typed programming for enhanced code quality.
+- **TailwindCSS**: Utility-first CSS framework for fast and responsive UI development.
 
-Follow these steps:
+### Backend
+- **AI Processing**: Smart algorithms to apply effects and enhancements.
+- **Image Storage**: Efficient storage for processed images and metadata.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Tools and Libraries
+- **Vite**: Modern and fast build tool for frontend development.
+- **Radix UI**: Accessible and customizable UI components.
+- **Lucide React**: Icon library for modern and visually appealing icons.
+- **Class Variance Authority (CVA)**: Utility for managing component styling and variants.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Project Structure
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/
+│   ├── camera/          # Camera functionality components
+│   ├── gallery/         # Photo gallery and viewer components
+│   ├── processing/      # AI-based photo processing components
+│   └── ui/              # Reusable UI components (buttons, dialogs, etc.)
+├── hooks/               # Custom React hooks
+├── lib/                 # Utility functions
+├── pages/               # Application pages
+└── App.tsx             # Main application entry point
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Usage
+1. Open the app and navigate to the Camera View.
+2. Capture photos and apply desired themes using the Theme Selector.
+3. Enhance photos with AI processing and save or share them.
+4. Browse saved photos in the Gallery for a trip down memory lane.
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Contribution
+Contributions are welcome! If you’d like to report a bug or suggest a feature, please open an issue or submit a pull request.
 
-## What technologies are used for this project?
+---
 
-This project is built with .
+## License
+This project is licensed under the [MIT License](LICENSE).
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/0f38e276-2e07-46c3-babf-eabd5f1ab874) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+Enjoy capturing your baby’s precious moments with the Baby Photo App!
